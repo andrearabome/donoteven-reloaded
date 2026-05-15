@@ -38,6 +38,21 @@
     box-shadow: none;
 }
 
+.main__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.main__btn a {
+    display: flex;
+}
+
 .gone__img--container {
     display: flex;
     align-items: center;
@@ -65,31 +80,56 @@
 */
 .links {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 20px;
-    padding: 10px;
-    align-items: stretch;
     justify-content: center;
+    gap: clamp(10px, 2vw, 20px);
+    padding: 10px;
     border: none;
     background: none;
     margin: 0 auto;
-    width: 100%;
-    margin-right: auto;
+    width: min(100%, 900px);
 }
-.links img{
-    flex: 1;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10%;
-    /*box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);*/
-    border-radius: 10px;
-    transition: all 0.2s ease;
-    cursor: crosshair;
 
+.links__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 96px;
+    max-width: 120px;
+    min-width: 72px;
+    padding: 0;
+    border: none;
+    background: none;
 }
-.links img{
-    height: 50%;
+
+.links__btn a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+}
+
+.links__btn img {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 10%;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+    cursor: crosshair;
+}
+
+.links__btn img:hover {
+    transform: translateY(-2px);
+}
+
+.links__btn img[alt="linkedin"] {
+    max-width: 78%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 
@@ -228,9 +268,18 @@ flex-direction: column;
 */
 
 @media only screen and (max-width: 500px) {
-  .links img{
-    padding:1%;
-    height: 80%;
-    width: 130%;
-  }
+    .links {
+        gap: 8px;
+        width: 100%;
+    }
+
+    .links__btn {
+        flex-basis: 74px;
+        min-width: 64px;
+        max-width: 88px;
+    }
+
+    .links__btn img {
+        padding: 6%;
+    }
 }
